@@ -17,10 +17,12 @@ jobs:
         run: |
           npm install
           npm run build 
+          npm run bundle
+          npm run minify
       - name: Deploy to Github Pages
         uses: JamesIves/github-pages-deploy-action@4.1.4 
         with:
           BRANCH: gh-pages
-          FOLDER: build
+          FOLDER: ./
           CLEAN: true
 

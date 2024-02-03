@@ -43,7 +43,7 @@ const bunnylol: (string) => Promise<boolean> = async function (
       const command: CommandType = COMMANDS[prefix];
       const protocol: string = new URL(command.url).protocol;
       if (command.searchurl && arr.length !== 1) {
-        searchParam = prefix !== "$" ? prefix.length + 1 : prefix.length;
+        searchParam += prefix !== "$" ? prefix.length + 1 : prefix.length;
         await redirect(
           `${command.searchurl}${encodeURIComponent(
             currCmd.substring(searchParam)

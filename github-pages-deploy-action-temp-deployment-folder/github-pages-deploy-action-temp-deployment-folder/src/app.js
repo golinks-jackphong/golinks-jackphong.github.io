@@ -22,9 +22,14 @@ const bunnylol: (string) => Promise<boolean> = async function (
     arr = currCmd.split(/[ +]/g);
   }
   if (arr.length > 0) {
-    const prefix: string = arr[0].endsWith(".")
+    let prefix: string = arr[0].endsWith(".")
       ? arr[0].substring(0, arr[0].length - 1).toLowerCase()
       : arr[0].toLowerCase();
+
+    if(prefix.startsWith("go/") && prefix.substring(3) in COMMANDS){
+      prefix = prefix.substring(3)
+    }
+
     if (prefix in COMMANDS || prefix.startsWith("go/") && prefix.substring(3) in COMMANDS) {
       // $FlowFixMe - this is actually correct since the prefix is a key.
       const command: CommandType = COMMANDS[prefix];

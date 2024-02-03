@@ -26,11 +26,11 @@ const bunnylol: (string) => Promise<boolean> = async function (
       ? arr[0].substring(0, arr[0].length - 1).toLowerCase()
       : arr[0].toLowerCase();
 
-    if(prefix.startsWith("go/") && prefix.substring(3) in COMMANDS){
-      prefix = prefix.substring(3)
+    if(prefix.startsWith("go%2F") && prefix.substring(5) in COMMANDS){
+      prefix = prefix.substring(5)
     }
 
-    if (prefix in COMMANDS || prefix.startsWith("go/") && prefix.substring(3) in COMMANDS) {
+    if (prefix in COMMANDS) {
       // $FlowFixMe - this is actually correct since the prefix is a key.
       const command: CommandType = COMMANDS[prefix];
       const protocol: string = new URL(command.url).protocol;

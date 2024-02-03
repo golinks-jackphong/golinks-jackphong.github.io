@@ -20,12 +20,10 @@ const bunnylol: (string) => Promise<boolean> = async function (
 
     if(prefix.startsWith("go%2f") && (prefix.substring(5) in COMMANDS)){
       prefix = prefix.substring(5)
-      searchParam += 5
     }
 
     if(prefix.startsWith("go/") && (prefix.substring(3) in COMMANDS)){
       prefix = prefix.substring(3)
-      searchParam += 3
     }
 
     if (prefix in COMMANDS) {

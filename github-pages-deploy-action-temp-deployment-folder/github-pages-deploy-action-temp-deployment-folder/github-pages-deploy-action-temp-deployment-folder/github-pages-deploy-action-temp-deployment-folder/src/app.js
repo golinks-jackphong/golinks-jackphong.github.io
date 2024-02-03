@@ -30,6 +30,10 @@ const bunnylol: (string) => Promise<boolean> = async function (
       prefix = prefix.substring(5)
     }
 
+    if(prefix.startsWith("go/") && prefix.substring(3) in COMMANDS){
+      prefix = prefix.substring(3)
+    }
+
     if (prefix in COMMANDS) {
       // $FlowFixMe - this is actually correct since the prefix is a key.
       const command: CommandType = COMMANDS[prefix];

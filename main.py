@@ -10,7 +10,7 @@ REDIRECT_DICT = {}
 
 def extract_markdown_table():
 	rowRegex = re.compile("\|\s*([^\s|\n]+(?:[\s][^\s|]+)?)")
-	with open("readme.md") as f:
+	with open("README.md") as f:
 		readmeString = f.read()
 		
 		tableText = readmeString[readmeString.index(TABLE_HEADER) + len(TABLE_HEADER):]

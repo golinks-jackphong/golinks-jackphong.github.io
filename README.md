@@ -10,6 +10,16 @@ Some commands also support search, like `<prefix>/<command> <search string>` wil
 
 To update commands, just edit the markdown table below.
 
+# Docker #
+
+Step 1 : Download python deps
+
+Step 2 : Download Python
+
+Step 3 : Download Fast API and Uvicorn
+
+Step 4 : Run
+
 Commands:
 | Name             | Command | url                              | searchUrl                                     |
 |------------------|---------|----------------------------------|-----------------------------------------------|
